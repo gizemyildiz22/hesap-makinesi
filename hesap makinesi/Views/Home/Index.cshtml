@@ -1,0 +1,115 @@
+﻿<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<html>
+    <head>
+        <body>
+            <tr><input class="txtekran" type="text" /></tr>
+            <br />
+            <tr>
+                <td><input class="btnhesap" type="button" value="1" /></td>
+                <td><input class="btnhesap" type="button" value="2" /></td>
+                <td><input class="btnhesap" type="button" value="3" /></td>
+                <td><input class="btnislem" type="button" value="*"/></td>
+               
+
+
+
+            </tr>
+            <br/>
+            <tr>
+                <td><input class="btnhesap" type="button" value="4" /></td>
+                <td><input class="btnhesap" type="button" value="5" /></td>
+                <td><input class="btnhesap" type="button" value="6" /></td>
+                <td><input class="btnislem" type="button" value="+" /></td>
+
+
+
+            </tr>
+            <br />
+            <tr>
+                <td><input class="btnhesap" type="button" value="7" /></td>
+                <td><input class="btnhesap" type="button" value="8" /></td>
+                <td><input class="btnhesap" type="button" value="9" /></td>
+                <td><input class="btnislem" type="button" value="-" /></td>
+                <td><input class="btnislem" type="button" value="/" /></td>
+
+
+
+            </tr>
+            <br/>
+            <tr><input class="btnesit" type="button" value="=" /> </tr>
+
+        </body>
+    </head>
+</html>
+
+<style> 
+{
+     btnhesap{
+
+        border-color =red;
+     }
+
+    
+}
+</style>
+
+<script>
+
+    var birincisayi = 0;
+    var ikincisayi = 0;
+    
+    $(".btnhesap").click(function () {
+
+        var value = $(this).val();
+        
+        $(".txtekran").val(value);
+        
+
+    });
+   
+
+    $(".btnislem").click(function () {
+
+        
+
+        birincisayi=$(".txtekran").val();
+        $(".txtekran").val("");
+
+        islem = $(this).val();
+        
+    });
+
+    $(".btnesit").click(function () {
+
+
+
+        ikincisayi = $(".txtekran").val();
+       
+        var islemsonuc=0;
+        if (islem == "+") {
+
+            islemsonuc = parseInt(birincisayi) + parseInt(ikincisayi);
+            $(".txtekran").val(islemsonuc);
+        }
+        if (islem == "-") {
+
+            islemsonuc = parseInt(birincisayi) - parseInt(ikincisayi);
+            $(".txtekran").val(islemsonuc);
+        }
+        if (islem == "*") {
+
+            islemsonuc = parseInt(birincisayi) * parseInt(ikincisayi);
+            $(".txtekran").val(islemsonuc);
+        }
+        if (islem == "/") {
+
+            islemsonuc = parseInt(birincisayi) / parseInt(ikincisayi);
+            $(".txtekran").val(islemsonuc);
+        }
+
+    });
+
+
+</script>
+
+
